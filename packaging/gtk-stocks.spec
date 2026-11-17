@@ -1,5 +1,5 @@
 Name:           gtk-stocks
-Version:        0.1.0
+Version:        0.1.1
 Release:        1%{?dist}
 Summary:        Stock tracker for GNOME in the spirit of Apple Stocks
 License:        MIT
@@ -28,6 +28,8 @@ charts from 1D to ALL, key stats and news. Market data from Yahoo Finance.
 install -Dm0755 packaging/gtk-stocks %{buildroot}%{_bindir}/gtk-stocks
 mkdir -p %{buildroot}%{_datadir}/%{name}/stocks
 install -m0644 stocks/*.py stocks/style.css %{buildroot}%{_datadir}/%{name}/stocks/
+install -Dm0644 data/icons/hicolor/scalable/apps/io.github.gtkstocks.Stocks.svg \
+    %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/io.github.gtkstocks.Stocks.svg
 install -Dm0644 io.github.gtkstocks.Stocks.desktop \
     %{buildroot}%{_datadir}/applications/io.github.gtkstocks.Stocks.desktop
 
@@ -40,7 +42,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/io.github.gtkstocks.S
 %{_bindir}/gtk-stocks
 %{_datadir}/%{name}/
 %{_datadir}/applications/io.github.gtkstocks.Stocks.desktop
+%{_datadir}/icons/hicolor/scalable/apps/io.github.gtkstocks.Stocks.svg
 
 %changelog
+* Tue Nov 17 2026 kernelzeroday - 0.1.1-1
+- New app icon
+
 * Tue Nov 17 2026 kernelzeroday - 0.1.0-1
 - Initial release

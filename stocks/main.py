@@ -23,9 +23,13 @@ class StocksApp(Adw.Application):
         Adw.Application.do_startup(self)
         css = Gtk.CssProvider()
         css.load_from_path(os.path.join(os.path.dirname(__file__), "style.css"))
-        Gtk.StyleContext.add_provider_for_display(
-            Gdk.Display.get_default(), css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-        )
+        display = Gdk.Display.get_default()
+        Gtk.StyleContext.add_provider_for_display(display, css, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        # When running from a source checkout, find the icon in ./data/icons.
+        icons = os.path.join(os.path.dirname(__file__), os.pardir, "data", "icons")
+        if os.path.isdir(icons):
+            Gtk.IconTheme.get_for_display(display).add_search_path(os.path.abspath(icons))
+        Gtk.Window.set_default_icon_name(APP_ID)
         for name, cb, accels in (
             ("quit", lambda *_: self.quit(), ["<Control>q"]),
             ("about", self._on_about, []),
@@ -43,7 +47,7 @@ class StocksApp(Adw.Application):
     def _on_about(self, *_):
         Adw.AboutDialog(
             application_name="Stocks",
-            application_icon="org.gnome.Settings-about-symbolic",
+            application_icon=APP_ID,
             version=__version__,
             comments="Track your watchlist with live quotes, charts and news.\n"
             "Market data from Yahoo Finance; may be delayed.",

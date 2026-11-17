@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="12" x2="0" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a3644"/>
+      <stop offset="1" stop-color="#1e1b26"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="30" x2="0" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#33d17a" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#33d17a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="line" x1="12" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2ec27e"/>
+      <stop offset="1" stop-color="#57e389"/>
+    </linearGradient>
+    <clipPath id="face">
+      <rect x="12" y="12" width="104" height="100" rx="18"/>
+    </clipPath>
+  </defs>
+
+  <!-- base / depth edge -->
+  <rect x="12" y="18" width="104" height="100" rx="18" fill="#141218"/>
+  <!-- face -->
+  <rect x="12" y="12" width="104" height="100" rx="18" fill="url(#bg)"/>
+
+  <g clip-path="url(#face)">
+    <!-- grid -->
+    <g stroke="#ffffff" stroke-opacity="0.07" stroke-width="2">
+      <path d="M12 38h104M12 62h104M12 86h104"/>
+    </g>
+    <!-- previous close -->
+    <path d="M12 74h104" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="3 4"/>
+    <!-- area under the line -->
+    <path d="M12 84 L24 78 L33 82 L44 68 L53 73 L64 58 L73 63 L84 46 L92 51 L100 36 L108 42 L122 24 L122 112 L12 112 Z"
+          fill="url(#area)"/>
+    <!-- price line -->
+    <path d="M6 87 L12 84 L24 78 L33 82 L44 68 L53 73 L64 58 L73 63 L84 46 L92 51 L100 36 L108 42 L122 24"
+          fill="none" stroke="url(#line)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- hover crosshair -->
+  <path d="M100 14v96" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" clip-path="url(#face)"/>
+  <!-- hover dot -->
+  <circle cx="100" cy="36" r="9" fill="#57e389" fill-opacity="0.25"/>
+  <circle cx="100" cy="36" r="5.5" fill="#ffffff"/>
+  <circle cx="100" cy="36" r="3" fill="#2ec27e"/>
+
+  <!-- subtle top highlight -->
+  <rect x="12.5" y="12.5" width="103" height="99" rx="17.5" fill="none" stroke="#ffffff" stroke-opacity="0.08"/>
+</svg>

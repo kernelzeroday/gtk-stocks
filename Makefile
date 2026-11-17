@@ -1,7 +1,7 @@
 NAME    := gtk-stocks
 VERSION := $(shell sed -n 's/^Version: *//p' packaging/$(NAME).spec)
 TOPDIR  := $(CURDIR)/build/rpmbuild
-SOURCES := stocks packaging io.github.gtkstocks.Stocks.desktop README.md LICENSE run.sh
+SOURCES := stocks data packaging io.github.gtkstocks.Stocks.desktop README.md LICENSE run.sh
 
 .PHONY: rpm srpm tarball clean
 

@@ -146,7 +146,7 @@ class DetailView(Adw.Bin):
         self.stack = Gtk.Stack(transition_type=Gtk.StackTransitionType.CROSSFADE)
         self.stack.add_named(
             Adw.StatusPage(
-                icon_name="org.gnome.Settings-about-symbolic",
+                icon_name="io.github.gtkstocks.Stocks",
                 title="No Stock Selected",
                 description="Choose a symbol from your watchlist or search for one.",
             ),
