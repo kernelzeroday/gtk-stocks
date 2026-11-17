@@ -1,0 +1,32 @@
+.pill-badge {
+  min-width: 74px;
+  min-height: 0;
+  padding: 3px 8px;
+  border-radius: 7px;
+  font-weight: 700;
+  color: white;
+  background-color: #77767b;
+  box-shadow: none;
+}
+.pill-badge.up { background-color: #2ec27e; }
+.pill-badge.down { background-color: #e01b24; }
+.pill-badge.up:hover { background-color: #33d17a; }
+.pill-badge.down:hover { background-color: #ed333b; }
+.pill-badge label { font-feature-settings: "tnum"; }
+
+.row-price { font-weight: 600; }
+
+.big-price {
+  font-size: 30pt;
+  font-weight: 800;
+  font-feature-settings: "tnum";
+}
+.change { font-size: 14pt; font-weight: 700; }
+.change.up { color: #26a269; }
+.change.down { color: #e01b24; }
+
+.stats-card { padding: 14px 16px; }
+.stats-card flowboxchild { padding: 0; }
+.stat-value { font-weight: 600; }
+
+.news-thumb { border-radius: 8px; }

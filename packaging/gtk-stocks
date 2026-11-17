@@ -1,0 +1,2 @@
+#!/bin/sh
+PYTHONPATH=/usr/share/gtk-stocks${PYTHONPATH:+:$PYTHONPATH} exec /usr/bin/python3 -m stocks "$@"

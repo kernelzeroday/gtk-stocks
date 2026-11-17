@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Stocks
+Comment=Track stock quotes, charts and news
+Exec=gtk-stocks
+Icon=org.gnome.Settings-about-symbolic
+Terminal=false
+Type=Application
+Categories=Office;Finance;GTK;
+StartupNotify=true
